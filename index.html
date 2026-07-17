@@ -1,237 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Hannylicious — Peppersoup & More</title>
-  <meta name="description" content="Hannylicious - Order delicious peppersoup and sides. Place orders over WhatsApp.">
-  <link rel="icon" href="/Hannyliciouspepperedtreats/Hannylicious/raw/main/favicon.ico">
-  <style>
-    :root{
-      --brand:#0b5d1e;
-      --brand-2:#198754;
-      --bg:#f5fff5;
-      --muted:#666;
-      --radius:10px;
-      --container-width:900px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hannylicious</title>
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background:var(--bg);
-      color:#111;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.4;
-    }
+<style>
 
-    a.skip-link{
-      position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden;
-    }
-    a.skip-link:focus{left:8px;top:8px;width:auto;height:auto;padding:8px;background:#fff;border-radius:4px;z-index:999}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
 
-    .wrap{width:92%;max-width:var(--container-width);margin:0 auto;padding:24px}
+body{
+background:#f5fff5;
+color:#333;
+}
 
-    header{background:var(--brand);color:#fff;padding:48px 20px;text-align:center;border-radius:12px}
-    header h1{font-size:2rem;margin:0}
-    header p{margin:6px 0 0;opacity:0.95}
+header{
+background:#0b5d1e;
+color:white;
+text-align:center;
+padding:50px 20px;
+}
 
-    main{margin-top:24px}
+header h1{
+font-size:45px;
+}
 
-    h2{color:var(--brand);margin:0 0 12px}
+header p{
+font-size:20px;
+margin-top:10px;
+}
 
-    .grid{display:grid;grid-template-columns:1fr;gap:14px}
-    @media(min-width:760px){.grid{grid-template-columns:1fr 360px}}
+section{
+width:90%;
+max-width:750px;
+margin:40px auto;
+}
 
-    .card{background:#fff;padding:16px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(10,10,10,0.06)}
+h2{
+text-align:center;
+color:#0b5d1e;
+margin-bottom:20px;
+}
 
-    .menu-list{list-style:none;margin:0;padding:0}
-    .menu-item{display:flex;justify-content:space-between;padding:12px 8px;border-bottom:1px dashed #eee}
-    .menu-item:last-child{border-bottom:none}
-    .price{font-weight:700;color:var(--muted)}
+.card{
+background:white;
+padding:18px;
+border-radius:10px;
+margin-bottom:15px;
+display:flex;
+justify-content:space-between;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
 
-    dl.payment{margin:0}
-    dl.payment dt{font-weight:600}
-    dl.payment dd{margin:0 0 8px 0;color:var(--muted)}
+input,textarea{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+}
 
-    form{display:flex;flex-direction:column}
-    label{font-size:0.95rem;margin-bottom:6px}
-    input,textarea,button,select{font:inherit}
-    input,textarea,select{padding:12px;border:1px solid #d0d7d0;border-radius:8px;margin-bottom:12px}
-    textarea{min-height:120px;resize:vertical}
+button{
+width:100%;
+padding:15px;
+background:#0b5d1e;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+cursor:pointer;
+}
 
-    .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+button:hover{
+background:#198754;
+}
 
-    button{background:var(--brand);color:#fff;padding:12px;border:0;border-radius:8px;cursor:pointer}
-    button[disabled]{opacity:.6;cursor:not-allowed}
-    button:focus{outline:3px solid rgba(25,135,84,0.18);outline-offset:2px}
+footer{
+background:#0b5d1e;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
 
-    .muted{color:var(--muted);font-size:0.95rem}
-    footer{margin-top:28px;padding:18px;text-align:center;color:#fff;background:var(--brand);border-radius:8px}
+</style>
 
-    .note{font-size:0.9rem;color:var(--muted)}
-  </style>
 </head>
+
 <body>
-  <a href="#main" class="skip-link">Skip to content</a>
-  <div class="wrap">
-    <header role="banner">
-      <h1>🍲 Hannylicious</h1>
-      <p><strong>Baddest Peppersoup Plug</strong></p>
-    </header>
 
-    <main id="main" role="main">
-      <div class="grid">
-        <section class="card" aria-labelledby="pricesHeading">
-          <h2 id="pricesHeading">Price List</h2>
-          <ul class="menu-list" aria-label="Menu and prices">
-            <li class="menu-item"><span>Turkey Peppersoup</span><span class="price">₦7,000</span></li>
-            <li class="menu-item"><span>Chicken Peppersoup</span><span class="price">₦5,000</span></li>
-            <li class="menu-item"><span>Small Catfish</span><span class="price">₦7,000</span></li>
-            <li class="menu-item"><span>Big Catfish</span><span class="price">₦9,000</span></li>
-            <li class="menu-item"><span>White Rice</span><span class="price">₦1,500</span></li>
-            <li class="menu-item"><span>Sausage</span><span class="price">₦800</span></li>
-            <li class="menu-item"><span>Plantain</span><span class="price">₦1,000</span></li>
-          </ul>
-        </section>
+<header>
 
-        <aside class="card" aria-labelledby="paymentHeading">
-          <h2 id="paymentHeading">Payment Details</h2>
-          <dl class="payment">
-            <dt>Payment Service</dt>
-            <dd class="muted">Opay</dd>
+<h1>🍲 Hannylicious</h1>
 
-            <dt>Account Name</dt>
-            <dd class="muted">Abdulkarim Hanifah</dd>
+<p><strong>Baddest Peppersoup Plug</strong></p>
 
-            <dt>Account Number</dt>
-            <dd class="muted">9131858992</dd>
-          </dl>
+</header>
 
-          <p class="note" style="margin-top:12px">After payment, place your order using the form. We'll confirm over WhatsApp.</p>
-        </aside>
-      </div>
+<section>
 
-      <section class="card" aria-labelledby="orderHeading" style="margin-top:14px">
-        <h2 id="orderHeading">Place Order</h2>
+<h2>Price List</h2>
 
-        <form id="orderForm" novalidate>
-          <label for="name">Your name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required placeholder="e.g. Aisha" aria-required="true">
+<div class="card">
+<span>Turkey Peppersoup</span>
+<span>₦7,000</span>
+</div>
 
-          <label for="phone">Phone number</label>
-          <input id="phone" name="phone" type="tel" inputmode="tel" pattern="^[0-9 +()-]{7,}$" required placeholder="e.g. 09131234567 or +2349131234567" aria-required="true">
+<div class="card">
+<span>Chicken Peppersoup</span>
+<span>₦5,000</span>
+</div>
 
-          <label for="location">Delivery location</label>
-          <input id="location" name="location" type="text" required placeholder="Street, area, city" aria-required="true">
+<div class="card">
+<span>Small Catfish</span>
+<span>₦7,000</span>
+</div>
 
-          <label for="order">Your order</label>
-          <textarea id="order" name="order" required placeholder="What would you like to order? Be specific (quantity, sides, spice)." aria-required="true"></textarea>
+<div class="card">
+<span>Big Catfish</span>
+<span>₦9,000</span>
+</div>
 
-          <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px">
-            <input id="confirmPayment" name="confirmPayment" type="checkbox" required>
-            <label for="confirmPayment" class="muted">I have made payment (required)</label>
-          </div>
+<div class="card">
+<span>White Rice</span>
+<span>₦1,500</span>
+</div>
 
-          <button id="placeOrderBtn" type="submit">Place Order via WhatsApp</button>
-          <p id="status" class="muted" aria-live="polite" style="margin-top:10px"></p>
-        </form>
-      </section>
+<div class="card">
+<span>Sausage</span>
+<span>₦800</span>
+</div>
 
-    </main>
+<div class="card">
+<span>Plantain</span>
+<span>₦1,000</span>
+</div>
 
-    <footer>
-      <strong>Hannylicious</strong>
-      <div style="margin-top:6px">Contact: 09131858992</div>
-    </footer>
-  </div>
+</section>
+<section>
 
-  <script>
-    (function(){
-      const DEST_NUMBER = '2349131858992'; // WhatsApp number (no +)
-      const form = document.getElementById('orderForm');
-      const btn = document.getElementById('placeOrderBtn');
-      const status = document.getElementById('status');
+<h2>Payment Details</h2>
 
-      function normalizePhone(input){
-        if(!input) return '';
-        let phone = input.replace(/[^0-9+]/g, '');
-        // If starts with +, strip + for wa.me but keep rest
-        if(phone.startsWith('+')) phone = phone.slice(1);
-        // If starts with 0, convert local 0xxxx -> 234xxxx
-        if(/^0[0-9]{6,}$/.test(phone)){
-          phone = '234' + phone.slice(1);
-        }
-        // if starts with '234' or other country code, keep as-is
-        return phone;
-      }
+<div class="card">
+<span>Bank</span>
+<span>Opay</span>
+</div>
 
-      function buildMessage({name, phone, location, order}){
-        return `Hello Hannylicious!\n\nName: ${name}\nPhone Number: ${phone}\nDelivery Location: ${location}\n\nOrder:\n${order}\n\nI have made payment.\n\nPayment Details\nBank: Opay\nAccount Name: Abdulkarim Hanifah\nAccount Number: 9131858992`;
-      }
+<div class="card">
+<span>Account Name</span>
+<span>Abdulkareem Hanifah</span>
+</div>
 
-      function openWhatsApp(number, text){
-        const url = 'https://wa.me/' + encodeURIComponent(number) + '?text=' + encodeURIComponent(text);
-        // Create anchor to open with noopener for safety
-        const a = document.createElement('a');
-        a.href = url;
-        a.target = '_blank';
-        a.rel = 'noopener noreferrer';
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-      }
+<div class="card">
+<span>Account Number</span>
+<span>9131858992</span>
+</div>
 
-      function setStatus(msg, isError){
-        status.textContent = msg;
-        status.style.color = isError ? 'crimson' : 'inherit';
-      }
+<p style="text-align:center;margin-top:15px;">
+Kindly make payment using the details above before placing your order.
+</p>
 
-      form.addEventListener('submit', function(e){
-        e.preventDefault();
-        setStatus('');
-        // Basic constraint validation
-        if(!form.checkValidity()){
-          // Let the browser show messages for fields
-          form.reportValidity();
-          return;
-        }
+</section>
 
-        const name = document.getElementById('name').value.trim();
-        const phoneRaw = document.getElementById('phone').value.trim();
-        const location = document.getElementById('location').value.trim();
-        const orderText = document.getElementById('order').value.trim();
+<section>
 
-        const normalizedPhone = normalizePhone(phoneRaw);
-        if(!/^[0-9]{7,}$/.test(normalizedPhone)){
-          setStatus('Please enter a valid phone number.', true);
-          return;
-        }
+<h2>Place Order</h2>
 
-        // Compose message and open WhatsApp
-        const message = buildMessage({name, phone: normalizedPhone, location, order: orderText});
+<input
+id="name"
+type="text"
+placeholder="Your Name">
 
-        setStatus('Opening WhatsApp...');
-        btn.disabled = true;
-        try{
-          openWhatsApp(DEST_NUMBER, message);
-          setStatus('WhatsApp opened. If it did not open, copy the message below and send to: +' + DEST_NUMBER);
+<input
+id="phone"
+type="text"
+placeholder="Phone Number">
 
-          // Also copy message to clipboard for fallback
-          if(navigator.clipboard){
-            navigator.clipboard.writeText(message).catch(()=>{/* ignore */});
-          }
-        }catch(err){
-          setStatus('Could not open WhatsApp automatically. Please copy the message and send to +' + DEST_NUMBER, true);
-        }finally{
-          setTimeout(()=>{btn.disabled=false;}, 1500);
-        }
-      });
+<input
+id="location"
+type="text"
+placeholder="Delivery Location">
 
-    })();
-  </script>
+<textarea
+id="order"
+rows="6"
+placeholder="Type your order here..."></textarea>
+
+<button onclick="sendOrder()">
+Place Order
+</button>
+
+</section>
+
+<footer>
+
+<p><strong>Hannylicious</strong></p>
+
+<p>09131858992</p>
+
+</footer>
+<script>
+
+function sendOrder(){
+
+let name = document.getElementById("name").value.trim();
+let phone = document.getElementById("phone").value.trim();
+let location = document.getElementById("location").value.trim();
+let order = document.getElementById("order").value.trim();
+
+if(name==="" || phone==="" || location==="" || order===""){
+alert("Please fill in all the fields.");
+return;
+}
+
+let message =
+`Hello Hannylicious! 🍲
+
+Name: ${name}
+
+Phone Number: ${phone}
+
+Delivery Location:
+${location}
+
+Order:
+${order}
+
+I have made payment.
+
+Payment Details
+
+Bank: Opay
+Account Name: Abdulkareem Hanifah
+Account Number: 9131858992`;
+
+window.open(
+"https://wa.me/2349131858992?text=" + encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+</script>
+
 </body>
 </html>
