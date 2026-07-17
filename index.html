@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hannylicious</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f5fff5;
+color:#333;
+}
+
+header{
+background:#0b5d1e;
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:45px;
+}
+
+header p{
+font-size:20px;
+margin-top:10px;
+}
+
+section{
+width:90%;
+max-width:700px;
+margin:40px auto;
+}
+
+h2{
+color:#0b5d1e;
+margin-bottom:20px;
+text-align:center;
+}
+
+.card{
+background:white;
+padding:18px;
+margin-bottom:15px;
+border-radius:10px;
+display:flex;
+justify-content:space-between;
+box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+
+input,textarea{
+width:100%;
+padding:15px;
+margin-top:10px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#0b5d1e;
+color:white;
+border:none;
+border-radius:8px;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#198754;
+}
+
+footer{
+background:#0b5d1e;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>🍲 Hannylicious</h1>
+
+<p><strong>Baddest Peppersoup Plug</strong></p>
+
+</header>
+
+<section>
+
+<h2>Price List</h2>
+
+<div class="card">
+<span>Turkey Peppersoup</span>
+<span>₦7,000</span>
+</div>
+
+<div class="card">
+<span>Chicken Peppersoup</span>
+<span>₦5,000</span>
+</div>
+
+<div class="card">
+<span>Small Catfish</span>
+<span>₦7,000</span>
+</div>
+
+<div class="card">
+<span>Big Catfish</span>
+<span>₦9,000</span>
+</div>
+
+<div class="card">
+<span>White Rice</span>
+<span>₦1,500</span>
+</div>
+
+<div class="card">
+<span>Sausage</span>
+<span>₦800</span>
+</div>
+
+<div class="card">
+<span>Plantain</span>
+<span>₦1,000</span>
+</div>
+
+</section>
+
+<section>
+
+<h2>Payment Details</h2>
+
+<div class="card">
+<span>Bank</span>
+<span>Opay</span>
+</div>
+
+<div class="card">
+<span>Account Name</span>
+<span>Abdulkarim Hanifah</span>
+</div>
+
+<div class="card">
+<span>Account Number</span>
+<span>9131858992</span>
+</div>
+
+</section>
+
+<section>
+
+<h2>Place Order</h2>
+
+<input id="name" type="text" placeholder="Your Name">
+
+<input id="phone" type="text" placeholder="Phone Number">
+
+<input id="location" type="text" placeholder="Delivery Location">
+
+<textarea id="order" rows="5" placeholder="Type your order here..."></textarea>
+
+<button onclick="sendOrder()">Place Order</button>
+
+</section>
+
+<footer>
+
+<p><strong>Hannylicious</strong></p>
+
+<p>09131858992</p>
+
+</footer>
+
+<script>
+
+function sendOrder(){
+
+let name = document.getElementById("name").value;
+let phone = document.getElementById("phone").value;
+let location = document.getElementById("location").value;
+let order = document.getElementById("order").value;
+
+let message =
+`Hello Hannylicious!
+
+Name: ${name}
+
+Phone Number: ${phone}
+
+Delivery Location: ${location}
+
+Order:
+${order}
+
+Payment Details
+
+Bank: Opay
+Account Name: Abdulkarim Hanifah
+Account Number: 9131858992`;
+
+window.open(
+"https://wa.me/2349131858992?text=" + encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+</script>
+
+</body>
+  </html>
